@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMA Taman Madya Jetis Yogyakarta - Perguruan Tamansiswa</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome & Phosphor Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script src="tailwind.config.js"></script>
+    
+    <link rel="stylesheet" href="site.css">
+</head>
+<body class="font-sans bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Top Bar -->
+    <div class="bg-tamansiswa-900 text-white text-xs md:text-sm py-2 border-b border-tamansiswa-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <span class="flex items-center"><i class="fas fa-location-dot text-tamansiswa-gold mr-2"></i> Jl. Pakuningratan No. 34A, Jetis, Yogyakarta</span>
+                <span class="hidden md:flex items-center"><i class="fas fa-phone text-tamansiswa-gold mr-2"></i> (0274) 512345</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <span class="hidden sm:inline-block text-tamansiswa-goldlight italic font-serif">"Ing Ngarsa Sung Tuladha, Ing Madya Mangun Karsa, Tut Wuri Handayani"</span>
+                <a href="https://www.instagram.com/tamanmadyajetisyogya1956?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-tamansiswa-gold transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-tamansiswa-gold transition"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="hover:text-tamansiswa-gold transition"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white shadow-md transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo & School Name -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 bg-tamansiswa-800 rounded-full flex items-center justify-center text-tamansiswa-gold font-bold text-xl border-2 border-tamansiswa-gold shadow-md group-hover:scale-105 transition transform">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <span class="block font-bold text-lg md:text-xl text-tamansiswa-900 leading-tight">SMA TAMAN MADYA JETIS</span>
+                        <span class="block text-xs font-semibold tracking-wider text-tamansiswa-600 uppercase">YOGYAKARTA • TAMANSISWA</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden lg:flex items-center space-x-8 font-medium text-gray-700">
+                    <a href="#beranda" class="hover:text-tamansiswa-800 hover:border-b-2 hover:border-tamansiswa-600 py-2 transition">Beranda</a>
+                    <a href="#tentang" class="hover:text-tamansiswa-800 hover:border-b-2 hover:border-tamansiswa-600 py-2 transition">Tentang Kami</a>
+                    <a href="#akademik" class="hover:text-tamansiswa-800 hover:border-b-2 hover:border-tamansiswa-600 py-2 transition">Program Studi</a>
+                    <a href="#instagram-news" class="hover:text-tamansiswa-800 hover:border-b-2 hover:border-tamansiswa-600 py-2 transition flex items-center">
+                        <i class="fab fa-instagram text-pink-600 mr-1.5"></i> Instagram News
+                    </a>
+                    <a href="#kontak" class="hover:text-tamansiswa-800 hover:border-b-2 hover:border-tamansiswa-600 py-2 transition">Kontak</a>
+                </nav>
+
+                <!-- Action Button & Mobile Toggle -->
+                <div class="flex items-center space-x-3">
+                    <a href="#ppdb" class="hidden sm:inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-semibold text-white bg-tamansiswa-800 hover:bg-tamansiswa-900 transition">
+                        <i class="fas fa-paper-plane mr-2"></i> Info PPDB
+                    </a>
+                    <button id="mobile-menu-button" class="lg:hidden text-gray-700 hover:text-tamansiswa-800 focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-4 space-y-2">
+            <a href="#beranda" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-tamansiswa-50 hover:text-tamansiswa-800">Beranda</a>
+            <a href="#tentang" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-tamansiswa-50 hover:text-tamansiswa-800">Tentang Kami</a>
+            <a href="#akademik" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-tamansiswa-50 hover:text-tamansiswa-800">Program Studi</a>
+            <a href="#instagram-news" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-tamansiswa-50 hover:text-tamansiswa-800"><i class="fab fa-instagram text-pink-600 mr-2"></i>Instagram News</a>
+            <a href="#kontak" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-tamansiswa-50 hover:text-tamansiswa-800">Kontak</a>
+            <a href="#ppdb" class="block w-full text-center px-4 py-2 mt-2 rounded-md font-semibold text-white bg-tamansiswa-800 hover:bg-tamansiswa-900">Info PPDB Online</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="gradient-hero text-white py-24 md:py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <span class="inline-block bg-tamansiswa-gold text-tamansiswa-900 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider mb-4 shadow">
+                    Perguruan Tamansiswa Yogyakarta
+                </span>
+                <h1 class="text-4xl md:text-6xl font-extrabold font-serif leading-tight mb-6">
+                    Membentuk Generasi Cerdas, Berkarakter & Berbudaya
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
+                    SMA Taman Madya Jetis Yogyakarta menyelenggarakan pendidikan berkualitas berdasarkan asas kebangsaan, kemerdekaan, dan kebudayaan yang diwariskan oleh Ki Hadjar Dewantara.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#ppdb" class="px-6 py-3.5 bg-tamansiswa-gold hover:bg-yellow-500 text-tamansiswa-900 font-bold rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 flex items-center">
+                        <i class="fas fa-user-plus mr-2"></i> Pendaftaran Siswa Baru
+                    </a>
+                    <a href="#tentang" class="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg border border-white/30 backdrop-blur-sm transition flex items-center">
+                        <i class="fas fa-compass mr-2"></i> Jelajahi Profil
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Stat Cards -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-2xl text-center">
+                <div class="p-2">
+                    <div class="text-3xl md:text-4xl font-extrabold text-tamansiswa-gold">100%</div>
+                    <div class="text-xs md:text-sm text-gray-200 mt-1">Kurikulum Merdeka</div>
+                </div>
+                <div class="p-2 border-l border-white/20">
+                    <div class="text-3xl md:text-4xl font-extrabold text-tamansiswa-gold">15+</div>
+                    <div class="text-xs md:text-sm text-gray-200 mt-1">Ekstrakulikuler & Seni</div>
+                </div>
+                <div class="p-2 border-l border-white/20">
+                    <div class="text-3xl md:text-4xl font-extrabold text-tamansiswa-gold">1000+</div>
+                    <div class="text-xs md:text-sm text-gray-200 mt-1">Alumni Berprestasi</div>
+                </div>
+                <div class="p-2 border-l border-white/20">
+                    <div class="text-3xl md:text-4xl font-extrabold text-tamansiswa-gold">B</div>
+                    <div class="text-xs md:text-sm text-gray-200 mt-1">Akreditasi Sekolah</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Image Grid -->
+                <div class="relative">
+                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                        <a id="about-instagram-link-1" href="#" target="_blank" rel="noopener noreferrer" class="hidden">
+                            <img id="about-instagram-image-1" src="" alt="Postingan Instagram terbaru" class="w-full h-96 object-cover">
+                        </a>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-2/3 rounded-2xl overflow-hidden shadow-xl border-4 border-white hidden sm:block">
+                        <a id="about-instagram-link-2" href="#" target="_blank" rel="noopener noreferrer" class="hidden">
+                            <img id="about-instagram-image-2" src="" alt="Postingan Instagram lainnya" class="w-full h-48 object-cover">
+                        </a>
+                    </div>
+                    <div class="absolute -top-6 -left-6 bg-tamansiswa-800 text-white p-6 rounded-2xl shadow-xl max-w-xs z-20">
+                        <p class="font-serif italic text-tamansiswa-goldlight text-sm mb-2">"Pendidikan adalah tuntunan di dalam hidup tumbuhnya anak-anak."</p>
+                        <p class="text-xs font-bold uppercase tracking-wide text-right">— Ki Hadjar Dewantara</p>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div>
+                    <div class="inline-flex items-center space-x-2 text-tamansiswa-800 font-semibold text-sm mb-3">
+                        <i class="fas fa-university"></i>
+                        <span>SEJARAH & NILAI UTAMA</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold font-serif text-gray-900 mb-6"> SMA Taman Madya Jetis Yogyakarta</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Berada di kawasan strategis Jetis dekat Tugu Jogja, **SMA Taman Madya Jetis** merupakan bagian penting dari sejarah Perguruan Tamansiswa. Kami berkomitmen untuk menyelenggarakan pendidikan terpadu yang memadukan keunggulan akademik, kebudayaan lokal Yogyakarta, serta budi pekerti yang luhur.
+                    </p>
+
+                    <!-- Tri Kon Tamansiswa -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                        <div class="p-4 bg-tamansiswa-50 rounded-xl border border-tamansiswa-100">
+                            <i class="fas fa-heart text-tamansiswa-800 text-2xl mb-2"></i>
+                            <h4 class="font-bold text-gray-900 text-sm">Ing Ngarsa Sung Tuladha</h4>
+                            <p class="text-xs text-gray-600 mt-1">Di depan memberi teladan moral dan integritas.</p>
+                        </div>
+                        <div class="p-4 bg-tamansiswa-50 rounded-xl border border-tamansiswa-100">
+                            <i class="fas fa-hands-holding-circle text-tamansiswa-800 text-2xl mb-2"></i>
+                            <h4 class="font-bold text-gray-900 text-sm">Ing Madya Mangun Karsa</h4>
+                            <p class="text-xs text-gray-600 mt-1">Di tengah membangun semangat & kreativitas.</p>
+                        </div>
+                        <div class="p-4 bg-tamansiswa-50 rounded-xl border border-tamansiswa-100">
+                            <i class="fas fa-feather-pointed text-tamansiswa-800 text-2xl mb-2"></i>
+                            <h4 class="font-bold text-gray-900 text-sm">Tut Wuri Handayani</h4>
+                            <p class="text-xs text-gray-600 mt-1">Di belakang memberikan dorongan & kepercayaan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Programs -->
+    <section id="akademik" class="py-20 bg-gray-50 border-t border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-serif text-gray-900 mb-4">Program Unggulan & Ekstrakulikuler</h2>
+                <p class="text-gray-600">Kurikulum Merdeka dikombinasikan dengan penguatan karakter budaya Jawa dan keterampilan digital modern.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Program Card 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
+                    <div class="w-14 h-14 bg-tamansiswa-100 rounded-2xl flex items-center justify-center text-tamansiswa-800 text-2xl mb-6 group-hover:bg-tamansiswa-800 group-hover:text-white transition">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">MIPA & Sains Teknologi</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Penguasaan ilmu sains, matematika terapan, praktikum laboratorium biologi, fisika, kimia, dan pengembangan logika koding dasar.</p>
+                    <ul class="text-xs text-gray-500 space-y-2">
+                        <li><i class="fas fa-check text-tamansiswa-600 mr-2"></i> Lab Komputer & Sains Modern</li>
+                        <li><i class="fas fa-check text-tamansiswa-600 mr-2"></i> Bimbingan Olimpiade Sains</li>
+                    </ul>
+                </div>
+
+                <!-- Program Card 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
+                    <div class="w-14 h-14 bg-tamansiswa-100 rounded-2xl flex items-center justify-center text-tamansiswa-800 text-2xl mb-6 group-hover:bg-tamansiswa-800 group-hover:text-white transition">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">IPS & Entrepreneurship</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Pendalaman ilmu sosial, ekonomi digital, sosiologi, dan pelatihan wirausaha muda kreatif berlandaskan etika bisnis.</p>
+                    <ul class="text-xs text-gray-500 space-y-2">
+                        <li><i class="fas fa-check text-tamansiswa-600 mr-2"></i> Program Student Entrepreneurship</li>
+                        <li><i class="fas fa-check text-tamansiswa-600 mr-2"></i> Praktik Riset Sosial Masyarakat</li>
+                    </ul>
+                </div>
+
+                <!-- Program Card 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group">
+                    <div class="w-14 h-14 bg-tamansiswa-100 rounded-2xl flex items-center justify-center text-tamansiswa-800 text-2xl mb-6 group-hover:bg-tamansiswa-800 group-hover:text-white transition">
+                        <i class="fas fa-masks-theater"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Seni Budaya & Karakter</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Pengembangan bakat seni karawitan, tari tradisi Jogja, batik, musik modern, serta literasi kebudayaan Tamansiswa.</p>
+                    <ul class="text-xs text-gray-500 space-y-2">
+                        <li><i class="fas fa-check text-tamansiswa-600 mr-2"></i> Sanggar Seni Karawitan & Tari</li>
+                        <li><i class="fas fa-check text-tamansiswa-600 mr-2"></i> Pentas Seni Remaja Tahunan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Facilities Gallery Template -->
+    <section id="fasilitas" class="py-20 bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-10">
+                <div class="inline-flex items-center space-x-2 text-tamansiswa-800 font-semibold text-sm mb-3">
+                    <i class="fas fa-images"></i>
+                    <span>GALERI SEKOLAH</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold font-serif text-gray-900 mb-3">Ruang & Fasilitas</h2>
+                <p class="text-gray-600">Dokumentasi ruang belajar dan fasilitas SMA Taman Madya Jetis.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <figure class="group overflow-hidden rounded-2xl bg-white shadow-sm border border-gray-200 transition hover:shadow-lg">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="ruang%20kelas.jpeg" alt="Ruang kelas SMA Taman Madya Jetis" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
+                    </div>
+                    <figcaption class="mt-3 px-2 pb-2 font-semibold text-gray-900">Ruang Kelas</figcaption>
+                </figure>
+                <figure class="group overflow-hidden rounded-2xl bg-white shadow-sm border border-gray-200 transition hover:shadow-lg">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="labKomputer.jpeg" alt="Laboratorium komputer SMA Taman Madya Jetis" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
+                    </div>
+                    <figcaption class="mt-3 px-2 pb-2 font-semibold text-gray-900">Laboratorium Komputer</figcaption>
+                </figure>
+                <figure class="group overflow-hidden rounded-2xl bg-white shadow-sm border border-gray-200 transition hover:shadow-lg">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="labIPA.jpeg" alt="Laboratorium IPA SMA Taman Madya Jetis" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
+                    </div>
+                    <figcaption class="mt-3 px-2 pb-2 font-semibold text-gray-900">Laboratorium Sains</figcaption>
+                </figure>
+                <figure class="group overflow-hidden rounded-2xl bg-white shadow-sm border border-gray-200 transition hover:shadow-lg">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="perpustakaan.jpeg" alt="Perpustakaan SMA Taman Madya Jetis" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
+                    </div>
+                    <figcaption class="mt-3 px-2 pb-2 font-semibold text-gray-900">Perpustakaan</figcaption>
+                </figure>
+                <figure class="group overflow-hidden rounded-2xl bg-white shadow-sm border border-gray-200 transition hover:shadow-lg">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="aula.jpeg" alt="Aula sekolah SMA Taman Madya Jetis" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
+                    </div>
+                    <figcaption class="mt-3 px-2 pb-2 font-semibold text-gray-900">Aula Sekolah</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Live Feed Section -->
+    <section id="instagram-news" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <div class="inline-flex items-center space-x-2 text-pink-600 font-bold text-sm mb-2">
+                        <i class="fab fa-instagram text-xl"></i>
+                        <span>LIVE INSTAGRAM UPDATES</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold font-serif text-gray-900">Kabar Terkini @tamanmadyajetisyogya1956</h2>
+                </div>
+                <div class="mt-4 md:mt-0 flex items-center space-x-3">
+                    <a href="https://www.instagram.com/tamanmadyajetisyogya1956?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="ig-badge text-white px-5 py-2.5 rounded-full font-semibold text-sm shadow-md hover:opacity-90 transition flex items-center">
+                        <i class="fab fa-instagram text-lg mr-2"></i> Ikuti di Instagram
+                    </a>
+                    <button id="refresh-ig-btn" class="p-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full transition" title="Refresh Live Feed">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Feed Filter Tabs -->
+            <div class="flex flex-wrap gap-2 mb-8 border-b border-gray-200 pb-4">
+                <button class="filter-btn active px-4 py-2 rounded-full text-sm font-semibold bg-tamansiswa-800 text-white" data-filter="all">Semua Postingan</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200" data-filter="ppdb">PPDB & Info</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200" data-filter="kegiatan">Kegiatan Siswa</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200" data-filter="prestasi">Prestasi</button>
+            </div>
+
+            <!-- Instagram Dynamic Feed Container -->
+            <div id="instagram-feed-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Javascript will populate Instagram Cards Here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- PPDB CTA Section -->
+    <section id="ppdb" class="py-16 bg-tamansiswa-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-8 md:mb-0 max-w-2xl">
+                <span class="bg-tamansiswa-gold text-tamansiswa-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Penerimaan Peserta Didik Baru</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-serif mt-3 mb-4">Bergabunglah Bersama Famili SMA Taman Madya Jetis</h2>
+                <p class="text-tamansiswa-100 text-sm md:text-base">Pendaftaran Gelombang 1 Telah Dibuka! Dapatkan keringanan biaya pendaftaran dan beasiswa prestasi akademik maupun non-akademik.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#kontak" class="px-8 py-4 bg-tamansiswa-gold hover:bg-yellow-500 text-tamansiswa-900 font-bold rounded-xl shadow-lg transition text-center">
+                    Daftar PPDB Online
+                </a>
+                <a href="https://wa.me/6281234567890" target="_blank" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-lg transition text-center flex items-center justify-center">
+                    <i class="fab fa-whatsapp mr-2 text-xl"></i> Konsultasi WA
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="kontak" class="py-20 bg-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form Card -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+                    <h3 class="text-2xl font-bold font-serif text-gray-900 mb-2">Hubungi Kami</h3>
+                    <p class="text-sm text-gray-600 mb-6">Kirimkan pertanyaan terkait informasi sekolah atau proses PPDB.</p>
+                    
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Nama Lengkap</label>
+                            <input type="text" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-tamansiswa-800 focus:border-transparent outline-none text-sm" placeholder="Masukkan nama Anda">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Email</label>
+                                <input type="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-tamansiswa-800 focus:border-transparent outline-none text-sm" placeholder="email@domain.com">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-700 mb-1">No. WhatsApp</label>
+                                <input type="tel" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-tamansiswa-800 focus:border-transparent outline-none text-sm" placeholder="0812xxxx">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Kategori Pertanyaan</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-tamansiswa-800 focus:border-transparent outline-none text-sm">
+                                <option>Informasi PPDB / Pendaftaran</option>
+                                <option>Program Beasiswa</option>
+                                <option>Kerjasama / Layanan Umum</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Pesan</label>
+                            <textarea rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-tamansiswa-800 focus:border-transparent outline-none text-sm" placeholder="Tuliskan pesan Anda di sini..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 bg-tamansiswa-800 hover:bg-tamansiswa-900 text-white font-bold rounded-lg shadow-md transition">
+                            <i class="fas fa-paper-plane mr-2"></i> Kirim Pesan
+                        </button>
+                    </form>
+                    <div id="form-success-msg" class="hidden mt-4 p-4 bg-emerald-100 text-emerald-800 rounded-lg text-sm text-center font-semibold">
+                        <i class="fas fa-check-circle mr-2"></i> Pesan Anda berhasil terkirim! Tim kami akan merespons segera.
+                    </div>
+                </div>
+
+                <!-- Info & Map -->
+                <div class="flex flex-col justify-between">
+                    <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 mb-6">
+                        <h3 class="text-xl font-bold font-serif text-gray-900 mb-4">Lokasi & Operasional</h3>
+                        <div class="space-y-4 text-sm text-gray-600">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-map-marker-alt text-tamansiswa-800 text-lg mt-1"></i>
+                                <div>
+                                    <strong class="block text-gray-900">Alamat Lengkap:</strong>
+                                    Jl. Pakuningratan No. 34A, Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-clock text-tamansiswa-800 text-lg mt-1"></i>
+                                <div>
+                                    <strong class="block text-gray-900">Jam Sekretariat PPDB:</strong>
+                                    Senin - Sabtu: 07.30 - 15.00 WIB
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-envelope text-tamansiswa-800 text-lg mt-1"></i>
+                                <div>
+                                    <strong class="block text-gray-900">Email Resmi:</strong>
+                                    info@smatamanmadyajetis.sch.id
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Box -->
+                    <div class="bg-gray-200 rounded-2xl overflow-hidden h-64 shadow-inner relative border border-gray-300">
+                        <iframe title="Peta Lokasi SMA Taman Madya Jetis" src="https://maps.google.com/maps?q=SMA%20Taman%20Madya%20Jetis%20Yogyakarta&t=&z=16&ie=UTF8&iwloc=&output=embed" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-tamansiswa-900 text-white border-t border-tamansiswa-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-tamansiswa-gold rounded-full flex items-center justify-center text-tamansiswa-900 font-bold text-lg">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <span class="font-bold text-xl font-serif text-white">SMA TAMAN MADYA JETIS</span>
+                    </div>
+                    <p class="text-gray-300 text-sm max-w-sm mb-4 leading-relaxed">
+                        Perguruan Tamansiswa Yogyakarta. Mewujudkan insan akademis yang cerdas, berkepribadian luhur, dan berakar kuat pada nilai-nilai budaya bangsa.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-tamansiswa-gold mb-4 text-sm uppercase">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#beranda" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="#tentang" class="hover:text-white transition">Sejarah & Visi Misi</a></li>
+                        <li><a href="#akademik" class="hover:text-white transition">Program Akademik</a></li>
+                        <li><a href="#instagram-news" class="hover:text-white transition">Kabar Instagram</a></li>
+                        <li><a href="#ppdb" class="hover:text-white transition">Pendaftaran PPDB</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-tamansiswa-gold mb-4 text-sm uppercase">Media Sosial</h4>
+                    <div class="flex space-x-3 mb-4">
+                        <a href="https://www.instagram.com/tamanmadyajetisyogya1956?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" class="w-10 h-10 bg-tamansiswa-800 rounded-lg flex items-center justify-center text-white hover:bg-tamansiswa-gold hover:text-tamansiswa-900 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-tamansiswa-800 rounded-lg flex items-center justify-center text-white hover:bg-tamansiswa-gold hover:text-tamansiswa-900 transition"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="w-10 h-10 bg-tamansiswa-800 rounded-lg flex items-center justify-center text-white hover:bg-tamansiswa-gold hover:text-tamansiswa-900 transition"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <p class="text-xs text-gray-400">Tag postingan Anda dengan #SMATamanMadyaJetis untuk ditayangkan di feed portal sekolah.</p>
+                </div>
+            </div>
+            <div class="border-t border-tamansiswa-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+                <p>&copy; 2026 SMA Taman Madya Jetis Yogyakarta. Hak Cipta Dilindungi.</p>
+                <p class="mt-2 md:mt-0">Perguruan Tamansiswa Cabang Jetis Yogyakarta</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Preview Post Instagram -->
+    <div id="ig-modal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl relative animate-fade-in">
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center z-10 transition">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="bg-black flex items-center justify-center max-h-96 md:max-h-full">
+                    <img id="modal-img" src="" alt="IG Preview" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-full ig-badge p-0.5">
+                                <div class="w-full h-full bg-white rounded-full p-0.5">
+                                    <div class="w-full h-full bg-tamansiswa-800 rounded-full flex items-center justify-center text-white text-xs font-bold">TM</div>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-sm text-gray-900">tamanmadyajetisyogya1956</h5>
+                                <p id="modal-date" class="text-xs text-gray-500"></p>
+                            </div>
+                        </div>
+                        <p id="modal-caption" class="text-sm text-gray-700 leading-relaxed mb-4 max-h-48 overflow-y-auto pr-2"></p>
+                    </div>
+                    <div>
+                        <a id="modal-link" href="#" target="_blank" class="block w-full py-2.5 bg-pink-600 hover:bg-pink-700 text-white font-semibold text-center rounded-lg text-sm transition">
+                            <i class="fab fa-instagram mr-2"></i> Buka Postingan Asli
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="site.js"></script>
+</body>
+</html>
